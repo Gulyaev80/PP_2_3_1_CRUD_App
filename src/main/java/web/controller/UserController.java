@@ -14,12 +14,12 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/user")
-public class UserControllers {
+public class UserController {
 
     private final UserService userService;
 
     @Autowired
-    public UserControllers(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -33,7 +33,7 @@ public class UserControllers {
     @GetMapping("/new")
     public String createUserForm(Model model) {
         User user = new User();
-        model.addAttribute("user" , user);
+        model.addAttribute("user", user);
         return "user/creatUser";
     }
 
