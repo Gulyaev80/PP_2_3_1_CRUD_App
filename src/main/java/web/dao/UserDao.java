@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface UserDao {
 
 
-    List<User> allUsers();
+    List<User> withdrawAllUsers();
 
     void save(User user);
 

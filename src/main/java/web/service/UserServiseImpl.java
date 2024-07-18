@@ -24,8 +24,8 @@ public class UserServiseImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<User> allUsers() {
-        return userDao.allUsers();
+    public List<User> withdrawAllUsers() {
+        return userDao.withdrawAllUsers();
     }
 
     @Override
