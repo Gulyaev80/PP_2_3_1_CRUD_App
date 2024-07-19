@@ -24,12 +24,12 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void save(User user) {
+    public void saveUser(User user) {
         entityManager.persist(user);
     }
 
     @Override
-    public Optional<User> findById(Long id) {
+    public Optional<User> findByUserId(Long id) {
         User user = entityManager.find(User.class, id);
         return Optional.ofNullable(user);
     }
@@ -40,8 +40,8 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void deleteById(Long id) {
-        Optional<User> userById = findById(id);
+    public void deleteByUser(Long id) {
+        Optional<User> userById = findByUserId(id);
         userById.ifPresent(user -> entityManager.remove(user));
     }
 }

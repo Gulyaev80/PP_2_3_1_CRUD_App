@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping
-    public String allUsers(Model model) {
+    public String withdrawAllUsers(Model model) {
         List<User> users = userService.withdrawAllUsers();
         model.addAttribute("users", users);
         return "user/allUsers";
@@ -44,13 +44,13 @@ public class UserController {
             return "user/creatUser";
         }
 
-        userService.save(user);
+        userService.saveUser(user);
         return "redirect:/user";
     }
 
     @GetMapping("/edit")
     public String editUserForm(@RequestParam("id") Long id, Model model) {
-        Optional<User> userById = userService.findById(id);
+        Optional<User> userById = userService.findByUserId(id);
 
         if (userById.isPresent()) {
             model.addAttribute("user", userById.get());
@@ -73,7 +73,7 @@ public class UserController {
 
     @PostMapping("/delete")
     public String deleteUser(@RequestParam("id") Long id) {
-        userService.deleteById(id);
+        userService.deleteByUser(id);
         return "redirect:/user";
     }
 

@@ -30,14 +30,14 @@ public class UserServiseImpl implements UserService {
 
     @Override
     @Transactional
-    public void save(User user) {
-        userDao.save(user);
+    public void saveUser(User user) {
+        userDao.saveUser(user);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<User> findById(Long id) {
-        return userDao.findById(id);
+    public Optional<User> findByUserId(Long id) {
+        return userDao.findByUserId(id);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class UserServiseImpl implements UserService {
 
     @Override
     @Transactional
-    public void deleteById(Long id) {
-        userDao.deleteById(id);
+    public void deleteByUser(Long id) {
+        userDao.deleteByUser(id);
     }
 }

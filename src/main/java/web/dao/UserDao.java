@@ -10,13 +10,13 @@ public interface UserDao {
 
     List<User> withdrawAllUsers();
 
-    void save(User user);
+    void saveUser(User user);
 
-    Optional<User> findById(Long id);
+    Optional<User> findByUserId(Long id);
 
     void updateUser(User user);
 
-    void deleteById(Long id);
+    void deleteByUser(Long id);
 
 
 }
